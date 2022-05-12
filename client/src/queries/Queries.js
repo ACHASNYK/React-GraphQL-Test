@@ -34,6 +34,14 @@ query Query3 {
     products {
       name
       id
+      inStock
+      gallery
+      prices {
+        currency {
+          symbol
+        }
+        amount
+      }
     }
   }
 }
@@ -46,6 +54,14 @@ query Query4 {
     products {
       name
       id
+      inStock
+      gallery
+      prices {
+        currency {
+          symbol
+        }
+        amount
+      }
     }
   }
 }

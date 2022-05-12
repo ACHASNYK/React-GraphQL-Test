@@ -25,16 +25,21 @@ class App extends Component {
       <Router>
         <ApolloProvider client={client}>
           <div className="main">
+            <div>
             <Navbar/>
+            </div>
             <div className ="content">
               <Switch>
-                <Route path="/">
+                <Route exact path="/">
                   <Main/>                                   
                 </Route>
-                <Route path="/clothes">
+                <Route exact path="/all">
+                  <Main/>                                   
+                </Route>
+                <Route exact path="/clothes">
                   <Clothes/>
                 </Route>
-                <Route path="/tech">
+                <Route exact path="/tech">
                   <Tech/>
                 </Route>
               </Switch>

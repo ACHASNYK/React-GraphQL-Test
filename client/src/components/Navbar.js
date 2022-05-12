@@ -3,17 +3,25 @@ import React, {Component} from "react";
 import { graphql } from "react-apollo"
 import { allCatQuery } from "../queries/Queries";
 import ApolloProvider from 'react-apollo';
+import HeaderButton from "./HeaderButton";
+
 
 
 class Navbar extends Component {
     displayList(){
         const data = this.props.data;
+        
         // console.log(data);
         if(data.loading) {
             return(<div>Loading...</div>)
         }else{
-            return data.categories.map(items => {
-                return (<button a href= "/:{this.name}">{items.name}</button>);
+            return data.categories.map((items, i) => {
+                return (<li className="buttons" key={i}> <HeaderButton 
+                    key = {i}
+                    name = {items.name}
+                    link = {items.name}
+                    /></li>);
+                
             })
         }
     }
